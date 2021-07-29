@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<!-- calendar23:59-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/ps.png">
+  <title>Psis</title>
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-5.12.1-web/css/all.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+
+  <link href='../assets/fullcalendar/packages/core/main.css' rel='stylesheet' />
+  <link href='../assets/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+  <link href='../assets/fullcalendar/packages/timegrid/main.css' rel='stylesheet' />
+  <link href='../assets/fullcalendar/packages/list/main.css' rel='stylesheet' />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+  
+  <script src='../assets/js/chosen.jquery.js'></script>
+  <script src='../assets/fullcalendar/packages/core/locales/pt-br.js'></script>
+  <script src='../assets/fullcalendar/packages/core/main.js'></script>
+  <script src='../assets/fullcalendar/packages/interaction/main.js'></script>
+  <script src='../assets/fullcalendar/packages/daygrid/main.js'></script>
+  <script src='../assets/fullcalendar/packages/timegrid/main.js'></script>
+  <script src='../assets/fullcalendar/packages/list/main.js'></script>
+  <script>
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+
+
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        slotDuration: '00:15:00', /* If we want to split day time each 15minutes */
+        minTime: '06:00:00',
+        maxTime: '23:30:00',
+        defaultView:'timeGridWeek',
+        selectable: true,
+        selectMirror: true,
+        height: $(window).height() - 200,
+        timeFormat: 'HH:mm',
+        locale: 'pt-br',
+        plugins: [ 'dayGrid', 'timeGrid', 'list', 'interaction' ],
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        },
+
+        slotLabelFormat: {
+          hour: 'numeric',
+          minute: '2-digit',
+          omitZeroMinute: false,
+          meridiem: 'short'
+        },
+        
+
+
+        defaultDate: '2020-02-12',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+      {
+        title: 'All Day Event',
+        start: '2020-02-01',
+
+      },
+      {
+        title: 'Long Event',
+        start: '2020-02-07',
+        end: '2020-02-10',
+        color: '#55ce63'
+      },
+      {
+        groupId: 999,
+        title: 'Repeating Event',
+        start: '2020-02-09T16:00:00'
+      },
+      {
+        groupId: 999,
+        title: 'Eduarda',
+        start: '2020-02-16T16:00:00'
+      },
+      {
+        title: 'Conferência',
+        start: '2020-02-11',
+        end: '2020-02-13',
+        color: '#009efb'
+      },
+      {
+        title: 'Alves',
+        start: '2020-02-12T06:30:00',
+        end: '2020-02-12T07:30:00',
+        color: '#009efb'
+      },
+      {
+        title: 'José',
+        start: '2020-02-12T07:30:00',
+        color: '#55ce63'
+      },
+      {
+        title: 'Meeting',
+        start: '2020-02-12T14:30:00'
+      },
+      {
+        title: 'Happy Hour',
+        start: '2020-02-12T17:30:00'
+      },
+      {
+        title: 'Dinner',
+        start: '2020-02-12T20:00:00'
+
+      },
+      { 
+
+
+        title: 'Filipi',
+        extendedProps: {
+          department: 'BioChemistry',
+          description: 'Lecture'
+        },
+        start: '2020-02-13T07:00:00',
+        color: '#009efb'
+        
+
+      },
+
+      { 
+
+
+        title: 'Eduarda',
+        extendedProps: {
+          department: 'BioChemistry',
+          description: 'Lecture'
+        },
+        start: '2020-02-11T07:30:00',
+        color: '#ffbc34'
+        
+
+      },
+
+      { 
+
+
+        title: 'Barbosa',
+        extendedProps: {
+          department: 'BioChemistry',
+          description: 'Lecture'
+        },
+        start: '2020-02-09T06:30:00',
+        color: '#f62d51'
+        
+
+      },
+
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2020-02-28',
+        
+
+      }
+      ],
+      eventClick: function(eventClickInfo) {
+
+
+        $('#visualizar').modal('show');
+        var dataConsultaMarcada = document . getElementById ('dataConsultaMarcada');
+        dataConsultaMarcada.value = eventClickInfo.event.start.toLocaleDateString();
+        var inicioConsultaMarcada = document.getElementById('inicioConsultaMarcada');
+        inicioConsultaMarcada.value = eventClickInfo.event.start.toLocaleTimeString();
+        var terminoConsultaMarccada = document.getElementById('terminoConsultaMarcada');
+        terminoConsultaMarcada.value = eventClickInfo.event.end.toLocaleTimeString();
+
+        // change the border color just for fun
+        //info.el.style.background = 'red';
+      },
+      select: function(info) {
+
+        $('#marcarConsulta').modal('show');
+        var dataConsulta = document . getElementById ('dataConsulta');
+        dataConsulta.value = info.start.toLocaleDateString();
+        var inicioConsulta = document.getElementById('inicioConsulta');
+        inicioConsulta.value = info.start.toLocaleTimeString();
+        var terminoConsulta = document.getElementById('terminoConsulta');
+        terminoConsulta.value = info.end.toLocaleTimeString();
+        var nomePaciente = document.getElementById('nomePaciente');
+        nomePaciente.value = '';
+
+        
+      }
+
+
+
+    });
+
+calendar.render();
+});
+
+
+</script>
+
+
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <div class="header">
+     <div class="header-left">
+      <a href="index.html" class="logo">
+       <img src="../assets/img/ps.png" width="35" height="35" alt=""> <span>Psis</span>
+     </a>
+   </div>
+   <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+   <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+   <ul class="nav user-menu float-right">
+    <li class="nav-item dropdown d-none d-sm-block">
+      <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fas fa-bell"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+      <div class="dropdown-menu notifications">
+        <div class="topnav-dropdown-header">
+          <span>Notifications</span>
+        </div>
+        <div class="drop-scroll">
+          <ul class="notification-list">
+            <li class="notification-message">
+              <a href="activities.html">
+                <div class="media">
+                 <span class="avatar">
+                  <img alt="John Doe" src="../assets/img/user.jpg" class="img-fluid rounded-circle">
+                </span>
+                <div class="media-body">
+                  <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+                  <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="notification-message">
+            <a href="activities.html">
+              <div class="media">
+               <span class="avatar">V</span>
+               <div class="media-body">
+                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+                <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="notification-message">
+          <a href="activities.html">
+            <div class="media">
+             <span class="avatar">L</span>
+             <div class="media-body">
+              <p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+              <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="notification-message">
+        <a href="activities.html">
+          <div class="media">
+           <span class="avatar">G</span>
+           <div class="media-body">
+            <p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+            <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="notification-message">
+      <a href="activities.html">
+        <div class="media">
+         <span class="avatar">V</span>
+         <div class="media-body">
+          <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+          <p class="noti-time"><span class="notification-time">2 days ago</span></p>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
+</div>
+<div class="topnav-dropdown-footer">
+  <a href="activities.html">View all Notifications</a>
+</div>
+</div>
+</li>
+<li class="nav-item dropdown d-none d-sm-block">
+  <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fas fa-comment"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+</li>
+<li class="nav-item dropdown has-arrow">
+  <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+    <span class="user-img"><img class="rounded-circle" src="../assets/img/user.jpg" width="40" alt="Admin">
+     <span class="status online"></span></span>
+     <span>Dr. Filipi</span>
+   </a>
+   <div class="dropdown-menu">
+    <a class="dropdown-item" href="profile.html">My Profile</a>
+    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+    <a class="dropdown-item" href="settings.html">Settings</a>
+    <a class="dropdown-item" href="login.html">Logout</a>
+  </div>
+</li>
+</ul>
+<div class="dropdown mobile-user-menu float-right">
+  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+  <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" href="profile.html">My Profile</a>
+    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+    <a class="dropdown-item" href="settings.html">Settings</a>
+    <a class="dropdown-item" href="login.html">Logout</a>
+  </div>
+</div>
+</div>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-inner slimscroll">
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <li class="menu-title">Menu</li>
+        <li>
+          <a href="index.html"><i class="fas fa-tachometer-alt"></i> <span>Painel de controle</span></a>
+        </li>
+        <li class="active">
+          <a href="agenda.html"><i class="fa fa-calendar"></i> <span>Agenda</span></a>
+        </li>
+        <li>
+          <a href="pacientes.html"><i class="fa fa-user" aria-hidden="true"></i>
+            <span>Pacientes</span></a>
+          </li>
+
+          <li>
+            <a href="financeiro.html"><i class="fas fa-dollar-sign" aria-hidden="true"></i> <span>Financeiro</span></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+             <span>Relatórios</span></a>
+           </li>
+           <li>
+            <a href="config.html"><i class="fa fa-cog" aria-hidden="true"></i>
+             <span>Configurações</span></a>
+           </li>
+
+           <li>
+            <a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>
+
+              <span>Ajuda</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="content">
+        <div class="row">
+          <div class="col-sm-8 col-4">
+            <h4 class="page-title">Agenda</h4>
+          </div>
+          <div class="col-sm-4 col-8 text-right m-b-30">
+            <a href="#" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#add_event"><i class="fa fa-plus"></i> Marcar sessão</a>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card-box mb-0">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="calendar"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.slimscroll.js"></script>
+    <script src="../assets/js/select2.min.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.html"></script>
+
+
+
+    <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../assets/js/app.js"></script>
+
+    <div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+          <div class="modal-body">
+            <div class="row">
+
+              <div class="col-sm-3">
+                <div class="doctor-img">
+                  <a class="avatar" href="profile.html"><img alt="" src="../assets/img/user-06.jpg"></a>
+                </div>
+              </div>
+
+
+
+              <div class="col-sm-9">
+                <div> <h5> Informações do paciente: </h5> </div>
+                <dl class="row">
+
+                  <dt class="col-sm-3 m-t-10"><h5>Paciente: </h5>  </dt>
+                  <dd class="col-sm-9 m-t-10 ">Filipi Alves Barbosa</dd>
+                  <dt class="col-sm-3 "> <h5>Telefone: </h5>  </dt>
+                  <dd class="col-sm-5 ">(038) 999928529</dd>
+                  <dd class="col-sm-4 "> <a href="" class="text-success">Whatsapp</a> </dd>
+
+                </dl>
+              </div>
+
+              <div class="modal-body border-top my-1 ">
+
+               <div class="row">
+
+                <div class="col-sm-12">
+                  <div class="form-group m-b-10  ">
+                    <label>Status da sessão</label>
+                    <select class=" form-control select2 rounded h-25 " >
+                      <option value="agendada"> Agendada </option>
+                      <option value="confirmada">Confirmada</option>
+                      <option value="finalizada">Finalizada</option>
+                      <option value="faltou">Faltou</option>
+                      <option value="cancDentista">Cancelada pelo psicólogo</option>
+                      <option value="cancPaciente">Cancelada pelo paciente</option>
+
+                    </select>
+
+                  </div>
+                </div>  
+
+
+
+                <div class="col-sm-4 ">
+                  <div class="form-group m-b-10 ">
+                    <label>Data</label>
+                    <input class="form-control rounded text-dark bg-white h-25" id="dataConsultaMarcada" type="text" value="" readonly>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="form-group m-b-10  ">
+                    <label>Início</label>
+                    <input class="form-control rounded text-dark bg-white h-25" id="inicioConsultaMarcada" type="text" readonly value="">
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="form-group m-b-10  ">
+                    <label>Término</label>
+                    <input class="form-control rounded text-dark bg-white h-25" type="text" id="terminoConsultaMarcada" readonly value="">
+                  </div>
+                </div>
+
+                <div class="col-sm-12">
+                  <div class="form-group m-b-0">
+                    <label>Queixa/Motivo da sessão</label>
+
+                     <input class="form-control rounded text-dark bg-white h-25" id="inicioConsultaMarcada" type="text" readonly value="">
+
+
+
+                  </div>
+                </div>
+
+                <div class="col-sm-12">
+                  <div class="form-group m-b-0">
+                    <label>Queixa/Motivo da sessão</label>
+                    <textarea class="form-control rounded" id="exampleFormControlTextarea1 " rows="1"></textarea>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="modal-footer m-t-0">
+          <button type="button" class="btn btn-secondary " data-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-primary">Desmarcar sessão</button>
+          <button type="button" class="btn btn-primary">Salvar </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="marcarConsulta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalhes da consulta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row ">
+            <div class="col-sm-8">
+              <div class="form-group">
+                <label>Paciente</label>
+                <input class="form-control rounded" type="text" id="nomePaciente" placeholder="Nome do paciente">
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <a href="" class="btn btn-primary m-t-30"> Novo Paciente</a>
+
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label>Data</label>
+                <input class="form-control rounded text-dark bg-white" id="dataConsulta" type="text" value="" readonly>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label>Início</label>
+                <input class="form-control rounded text-dark bg-white" id="inicioConsulta" type="text" readonly value="">
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label>Término</label>
+                <input class="form-control rounded text-dark bg-white" type="text" id="terminoConsulta" readonly value="">
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group m-b-0">
+                <label>Queixa/Motivo da sessão</label>
+                <textarea class="form-control rounded" id="exampleFormControlTextarea1 " rows="1"></textarea>
+              </div>
+            </div>
+
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Informações complementares</label>
+                <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="2"></textarea>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+          </div>   
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center"  >
+          <div class="m-b-20 text-center" >
+            <button type="button" class="btn btn-primary submit-btn " data-dismiss="modal" >Agendar Sessão</button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script >
+    $(document).read(function(){
+      $('.sel').chosen();
+
+    });
+  </script>
+
+</body>
+
+
+<!-- calendar24:03-->
+</html>

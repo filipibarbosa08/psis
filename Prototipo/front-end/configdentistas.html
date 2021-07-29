@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<!-- blank-page24:04-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/icon_odonto.ico">
+    <title>SisOdonto</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-5.12.1-web/css/all.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+         <div class="header-left">
+            <a href="index.html" class="logo">
+               <img src="../assets/img/icon_odonto.ico" width="35" height="35" alt=""> <span>SisOdonto</span>
+           </a>
+       </div>
+       <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+       <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+       <ul class="nav user-menu float-right">
+        <li class="nav-item dropdown d-none d-sm-block">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fas fa-bell"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+            <div class="dropdown-menu notifications">
+                <div class="topnav-dropdown-header">
+                    <span>Notifications</span>
+                </div>
+                <div class="drop-scroll">
+                    <ul class="notification-list">
+                        <li class="notification-message">
+                            <a href="activities.html">
+                                <div class="media">
+                                 <span class="avatar">
+                                    <img alt="John Doe" src="../assets/img/user.jpg" class="img-fluid rounded-circle">
+                                </span>
+                                <div class="media-body">
+                                    <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+                                    <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="notification-message">
+                        <a href="activities.html">
+                            <div class="media">
+                             <span class="avatar">V</span>
+                             <div class="media-body">
+                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+                                <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="notification-message">
+                    <a href="activities.html">
+                        <div class="media">
+                         <span class="avatar">L</span>
+                         <div class="media-body">
+                            <p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+                            <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="notification-message">
+                <a href="activities.html">
+                    <div class="media">
+                     <span class="avatar">G</span>
+                     <div class="media-body">
+                        <p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+                        <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="notification-message">
+            <a href="activities.html">
+                <div class="media">
+                 <span class="avatar">V</span>
+                 <div class="media-body">
+                    <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+                    <p class="noti-time"><span class="notification-time">2 days ago</span></p>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
+</div>
+<div class="topnav-dropdown-footer">
+    <a href="activities.html">View all Notifications</a>
+</div>
+</div>
+</li>
+<li class="nav-item dropdown d-none d-sm-block">
+    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comments"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+</li>
+<li class="nav-item dropdown has-arrow">
+    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+        <span class="user-img"><img class="rounded-circle" src="../assets/img/user.jpg" width="40" alt="Admin">
+         <span class="status online"></span></span>
+         <span>Admin</span>
+     </a>
+     <div class="dropdown-menu">
+      <a class="dropdown-item" href="profile.html">My Profile</a>
+      <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+      <a class="dropdown-item" href="settings.html">Settings</a>
+      <a class="dropdown-item" href="login.html">Logout</a>
+  </div>
+</li>
+</ul>
+<div class="dropdown mobile-user-menu float-right">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+    <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="profile.html">My Profile</a>
+        <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+        <a class="dropdown-item" href="settings.html">Settings</a>
+        <a class="dropdown-item" href="login.html">Logout</a>
+    </div>
+</div>
+</div>
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title">Menu</li>
+                <li >
+                    <a href="index.html"><i class="fas fa-tachometer-alt"></i> <span>Painel de controle</span></a>
+                </li>
+                <li>
+                    <a href="agenda.html"><i class="fa fa-calendar"></i> <span>Agenda</span></a>
+                </li>
+                <li>
+                    <a href="pacientes.html"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span>Pacientes</span></a>
+                 </li>
+                 <li >
+                    <a href="financeiro.html"><i class="fa fa-money " aria-hidden="true"></i> <span>Financeiro</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                     <span>Relatórios</span></a>
+                 </li>
+                 <li class="active">
+                    <a href="#"><i class="fa fa-cog" aria-hidden="true"></i>
+                       <span>Configurações</span></a>
+                   </li>
+
+                   <li>
+                    <a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>
+
+                        <span>Ajuda</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h4 class="card-title">Configurações</h4>
+
+                    <ul id="config" class="nav nav-tabs nav-tabs-top bg-white flex-column">
+                        <li class="nav-item"><a  class="nav-link " href="config.html" >Usuários</a></li>
+                        <li class="nav-item"><a  class="nav-link active" href="configdentistas.html" >Dentistas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="configconvenios.html" >Convênios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="configcaixa.html" >Caixa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#basictab5" data-toggle="tab">Anamneses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#basictab6" data-toggle="tab">Procedimentos</a></li>
+                      
+                        <li class="nav-item"><a class="nav-link" href="#basictab8" data-toggle="tab">Permissões</a></li>    
+
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="col-sm-10">
+                    <div class="tab-content">
+
+
+
+
+                        <div class="tab-pane  m-t-20" id="basictab1"> 
+                            <div class="card-box ">
+                                <a href="#basictab9" class=" btn btn-primary btn-rounded" data-toggle="tab"><i class="fa fa-plus"></i> Novo usuário</a>
+
+                                <h4 class="card-title text-dark" style="margin-top: 30px">Lista de usuários</h4>
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+
+                                        <div class="table-responsive">
+                                            <table class="table mb-0 table table-border table-striped custom-table" style="margin-top: -10px">
+                                                <thead class="text-secondary ">
+                                                    <tr>
+                                                        <th>Nome</th>
+                                                        <th>Grupo</th>
+                                                        <th>E-mail</th>
+                                                        <th class="text-right"> </th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Filipi Alves</td>
+                                                        <td>Administrador</td>
+                                                        <td>filipiab17@gmail.com</td>
+
+                                                        <td class="text-right">
+                                                            <div class="dropdown dropdown-action">
+                                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Eduarda</td>
+                                                        <td>Secretária</td>
+                                                        <td>eduarda123@gmail.com</td>
+
+                                                        <td class="text-right">
+                                                            <div class="dropdown dropdown-action">
+                                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="tab-pane show active m-t-20" id="basictab2">   
+                            <div class="card-box ">
+                                <a  class="btn btn-primary btn-rounded" href="#basictab10" data-toggle="tab"><i class="fa fa-plus"></i> Novo dentista</a>
+
+                                <h4 class="card-title text-dark" style="margin-top: 30px">Lista de dentistas</h4>
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+
+                                        <div class="table-responsive">
+                                            <table class="table mb-0 table table-border table-striped custom-table" style="margin-top: -10px">
+                                                <thead class="text-secondary ">
+                                                    <tr>
+                                                        <th>Nome</th>
+                                                        <th>Telefone</th>
+                                                        <th>E-mail</th>
+                                                        <th class="text-right"> </th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Dr. Alves</td>
+                                                        <td>038 999928529</td>
+                                                        <td>alves@gmail.com</td>
+
+                                                        <td class="text-right">
+                                                            <div class="dropdown dropdown-action">
+                                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Dr. Barbosa</td>
+                                                        <td>038 999923521</td>
+                                                        <td>eduarda123@gmail.com</td>
+
+                                                        <td class="text-right">
+                                                            <div class="dropdown dropdown-action">
+                                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="tab-pane m-t-20" id="basictab3"> 
+                            <div class="card-box ">
+                                <a href="#" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modalOrcamento"><i class="fa fa-plus"></i> Novo convênio</a>
+
+                                <h4 class="card-title text-dark" style="margin-top: 30px">Lista de convênios</h4>
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+
+                                        <div class="table-responsive">
+                                            <table class="table mb-0 table table-border table-striped custom-table" style="margin-top: -10px">
+                                                <thead class="text-secondary ">
+                                                    <tr>
+                                                        <th>Nome</th>
+                                                        <th>Telefone</th>
+                                                        <th>E-mail</th>
+                                                        <th>Site</th>
+                                                        <th class="text-right"> </th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Particular</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+
+                                                        <td class="text-right">
+                                                            <div class="dropdown dropdown-action">
+                                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Unimed Odonto</td>
+                                                        <td>4002-8922</td>
+                                                        <td>unimed@gmail.com</td>
+                                                        <td> <a href="https://www.unimedodonto.com.br/">https://www.unimedodonto.com.br/</a> </td>
+
+                                                        <td class="text-right">
+                                                            <div class="dropdown dropdown-action">
+                                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="tab-pane m-t-20" id="basictab4"> 
+                          <div class="card-box ">
+                            <a href="#" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modalOrcamento"><i class="fa fa-plus"></i> Novo caixa</a>
+
+                            <h4 class="card-title text-dark" style="margin-top: 30px">Lista de caixas</h4>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+
+
+                                    <div class="table-responsive">
+                                        <table class="table mb-0 table table-border table-striped custom-table" style="margin-top: -10px">
+                                            <thead class="text-secondary ">
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th class="text-right"></th>
+
+                                                    <th class="text-right"> </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Clínica</td>
+                                                    <td class="text-right"><button type="button" class="btn btn-success btn-rounded"><i class="fa fa-check" aria-hidden="true"></i>
+                                                    Caixa padrão</button>
+                                                </td>
+
+                                                <td class="text-right">
+                                                    <div class="dropdown dropdown-action">
+                                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+
+                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>Conta do banco</td>
+                                                <td></td>
+
+                                                <td class="text-right">
+                                                    <div class="dropdown dropdown-action">
+                                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+
+                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="tab-pane m-t-20" id="basictab5">   
+                    <div class="card-box ">
+                        Em desenvolvimento
+                    </div>
+                </div>
+
+
+                <div class="tab-pane m-t-20" id="basictab6">
+
+                   <div class="card-box ">
+                    <a href="#" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modalOrcamento"><i class="fa fa-plus"></i> Novo procedimento</a>
+
+                    <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
+                        <div class="col-lg-6">
+                            <h4 class="card-title text-dark" >Lista de procedimentos</h4>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-end">
+                            <div class="input-group mb-2 w-50 d-flex justify-content-end">
+                              <div class="input-group-prepend">
+                                <label class="input-group-text">Categoria</label>
+                            </div>
+                            <select class="custom-select  w-50 " >
+                                <option selected>Todos...</option>
+                                <option value="1">Cirurgia</option>
+                                <option value="2">Cirurgia Buco Maxilo Facial</option>
+                                <option value="3">Dentistica</option>
+                                <option value="3">Emergência</option>
+                                <option value="3">Endodontia</option>
+                                <option value="3">Exame clínico</option>
+                                <option value="3">Implantodontia</option>
+                                <option value="3">Odontopediatria</option>
+                                <option value="3">Ortodontia</option>
+                                <option value="3">Periodontia</option>
+                                <option value="3">Prevencao</option>
+                                <option value="3">Protese</option>
+                                <option value="3">Protese sobre implante</option>
+                                <option value="3">Radiologia</option>
+                                <option value="3">Testes e exames de laboratório</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+
+                        <div class="table-responsive">
+                            <table class="table mb-0 table table-border table-striped custom-table" id="tf" style="margin-top: -10px">
+                                <thead class="text-secondary ">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Valor</th>
+
+                                        <th class="text-right"> </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Clareamento caseiro</td>
+                                        <td>R$ 300,00 </td>
+
+
+                                        <td class="text-right">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Faceta em resina</td>
+                                        <td>R$ 600,00</td>
+
+                                        <td class="text-right">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>Aparelho Ortodôntico Fixo Parcial</td>
+                                        <td>R$ 600,00</td>
+
+                                        <td class="text-right">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="tab-pane m-t-20" id="basictab7"> 
+         <div class="card-box ">
+            <a href="#" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modalOrcamento"><i class="fa fa-plus"></i> Novo medicamento</a>
+
+
+            <h4 class="card-title text-dark m-t-30" >Lista de medicamentos</h4>
+
+
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <div class="table-responsive">
+                        <table class="table mb-0 table table-border table-striped custom-table" id="tm" style="margin-top: -10px">
+                            <thead class="text-secondary ">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Medida</th>
+
+                                    <th class="text-right"> </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Aciclovir 200mg
+                                    </td>
+                                    <td>Caixa </td>
+
+
+                                    <td class="text-right">
+                                        <div class="dropdown dropdown-action">
+                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Ibuprofeno</td>
+                                    <td>Caixa</td>
+
+                                    <td class="text-right">
+                                        <div class="dropdown dropdown-action">
+                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Nistatina 10ml</td>
+                                    <td>Frasco</td>
+
+                                    <td class="text-right">
+                                        <div class="dropdown dropdown-action">
+                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Azitromicina 500mg</td>
+                                    <td>Caxia</td>
+
+                                    <td class="text-right">
+                                        <div class="dropdown dropdown-action">
+                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Aciclovir (Creme, pomada)
+                                    </td>
+                                    <td>Tubo</td>
+
+                                    <td class="text-right">
+                                        <div class="dropdown dropdown-action">
+                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="tab-pane m-t-20" id="basictab8">   
+        <div class="card-box ">
+            Em desenvolvimento
+        </div>
+    </div>
+
+
+    <div class="tab-pane  m-t-20" id="basictab9">   
+        <div class="card-box ">
+            <h4 class="card-title">Cadastrar usuário</h4>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form group">
+                        <label>Nome <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control rounded ">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Grupo <span class="text-danger">*</span></label>
+                        <select class="form-control rounded">
+                            <option>Administrador</option>
+                            <option>Atendente</option>
+                            <option>Cirurgião dentista</option>
+                            <option>Recepcionista</option>
+                            <option>Secretária</option>
+                            <option>Gerente financeiro</option>
+                            <option>Gerente geral</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Login <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control rounded">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Senha <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control rounded">
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        Contato
+                    </a>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="collapse" id="collapseExample">
+                        <div class="">
+                            <div class="form-group">
+                                <label>Celular</label>
+                                <input type="tel" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-6">
+                    <div class="collapse" id="collapseExample">
+                        <div class="">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="email" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12 ">
+                    <a  data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        Endereço
+                    </a>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="collapse" id="collapseExample2">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <label>CEP</label>
+                                    <input type="text" class="form-control rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="collapse" id="collapseExample2">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <label>Endereço</label>
+                                    <input type="text" class="form-control rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="collapse" id="collapseExample2">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <label>Número</label>
+                                    <input type="text" class="form-control rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="collapse" id="collapseExample2">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <label>Complemento</label>
+                                    <input type="text" class="form-control rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="collapse" id="collapseExample2">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <label>Bairro</label>
+                                    <input type="text" class="form-control rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="collapse" id="collapseExample2">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <label>Cidade</label>
+                                    <input type="text" class="form-control rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="collapse" id="collapseExample2">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <select class="form-control rounded">
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG" selected>MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                        <option value="EX">EX</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12  d-flex justify-content-end">
+                    <a href="#" class="btn btn-primary font-weight-bold rounded"><i class="fa fa-floppy-o" aria-hidden="true"></i>
+
+                    Salvar</a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="tab-pane m-t-20" id="basictab10">
+        <div class="card-box">
+            <h4 class="card-title">Cadastrar dentista</h4>
+            <div class="row">
+
+
+                <div class="col-lg-12 m-b-10">
+                    <a  data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        Dados principais
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6 collapse show"  id="collapseExample3">
+                    <div class="form group">
+                        <label>Nome <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control rounded ">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 collapse show"  id="collapseExample3">
+                   <div class="form-group">
+                      <label>Foto</label>
+                      <div class="profile-upload">
+                         <div class="upload-img">
+                            <img alt="" src="assets/img/user.jpg">
+                        </div>
+                        <div class="upload-input">
+                            <input type="file" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 collapse show" id="collapseExample3">
+                <div class="form-group">
+                    <label>Data de nascimento</label>
+                    <div class="cal-icon">
+                        <input type="text" class="form-control datetimepicker rounded" >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6  collapse show" id="collapseExample3">
+                <div class="form-group gender-selected ">
+                    <label class="gen-label ">Sexo:</label>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" name="genero" class="form-check-input " checked="">Masculino
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label ">
+                            <input type="radio" name="genero" class="form-check-input">Feminino
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4">
+                <div class="collapse show" id="collapseExample3">
+                    <div class="">
+                        <div class="form-group">
+                            <label>CPF</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="collapse show" id="collapseExample3">
+                    <div class="">
+                        <div class="form-group">
+                            <label>RG</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="collapse show" id="collapseExample3">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Especialidade</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="collapse show" id="collapseExample3">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Número do conselho</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-4">
+                <div class="collapse show" id="collapseExample3">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Sigla do conselho</label>
+                            <select class="form-control">
+                                <option>CRM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+             <div class="col-lg-4">
+                    <div class="collapse show" id="collapseExample3">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <label>UF do conselho</label>
+                                    <select class="form-control rounded">
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG" selected>MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                        <option value="EX">EX</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            <div class="col-lg-12">
+                <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    Contato
+                </a>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="collapse" id="collapseExample">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Celular</label>
+                            <input type="tel" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-6">
+                <div class="collapse" id="collapseExample">
+                    <div class="">
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12 ">
+                <a  data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    Endereço
+                </a>
+
+            </div>
+            <div class="col-lg-3">
+                <div class="collapse" id="collapseExample2">
+                    <div class="">
+                        <div class="">
+                            <div class="form-group">
+                                <label>CEP</label>
+                                <input type="text" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="collapse" id="collapseExample2">
+                    <div class="">
+                        <div class="">
+                            <div class="form-group">
+                                <label>Endereço</label>
+                                <input type="text" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="collapse" id="collapseExample2">
+                    <div class="">
+                        <div class="">
+                            <div class="form-group">
+                                <label>Número</label>
+                                <input type="text" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="collapse" id="collapseExample2">
+                    <div class="">
+                        <div class="">
+                            <div class="form-group">
+                                <label>Complemento</label>
+                                <input type="text" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="collapse" id="collapseExample2">
+                    <div class="">
+                        <div class="">
+                            <div class="form-group">
+                                <label>Bairro</label>
+                                <input type="text" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="collapse" id="collapseExample2">
+                    <div class="">
+                        <div class="">
+                            <div class="form-group">
+                                <label>Cidade</label>
+                                <input type="text" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="collapse" id="collapseExample2">
+                    <div class="">
+                        <div class="">
+                            <div class="form-group">
+                                <label>Estado</label>
+                                <select class="form-control rounded">
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG" selected>MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                    <option value="EX">EX</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="col-sm-12  d-flex justify-content-end">
+                <a href="#" class="btn btn-primary font-weight-bold rounded"><i class="fa fa-floppy-o" aria-hidden="true"></i>
+
+                Salvar</a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="notification-box">
+    <div class="msg-sidebar notifications msg-noti">
+        <div class="topnav-dropdown-header">
+            <span>Messages</span>
+        </div>
+        <div class="drop-scroll msg-list-scroll" id="msg_list">
+            <ul class="list-box">
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">R</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Richard Miles </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item new-message">
+                            <div class="list-left">
+                                <span class="avatar">J</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">John Doe</span>
+                                <span class="message-time">1 Aug</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">T</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Tarah Shropshire </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">M</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Mike Litorus</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">C</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Catherine Manseau </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">D</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Domenic Houston </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">B</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Buster Wigton </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">R</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Rolland Webber </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">C</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Claire Mapes </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">M</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Melita Faucher</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">J</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Jeffery Lalor</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">L</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Loren Gatlin</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">T</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Tarah Shropshire</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="topnav-dropdown-footer">
+            <a href="chat.html">See all messages</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<!-- Modais --> 
+
+<!-- Modal Usuários -->
+<div class="modal fade" id="modalCadastrarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 600px!important;" role="document" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar usuário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form group">
+                <label>Nome <span class="text-danger">*</span></label>
+                <input type="text" class="form-control rounded ">
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Grupo <span class="text-danger">*</span></label>
+                <select class="form-control rounded">
+                    <option>Administrador</option>
+                    <option>Atendente</option>
+                    <option>Cirurgião dentista</option>
+                    <option>Recepcionista</option>
+                    <option>Secretária</option>
+                    <option>Gerente financeiro</option>
+                    <option>Gerente geral</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Login <span class="text-danger">*</span></label>
+                <input type="text" class="form-control rounded">
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Senha <span class="text-danger">*</span></label>
+                <input type="password" class="form-control rounded">
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                Contato
+            </a>
+
+        </div>
+        <div class="col-lg-6">
+            <div class="collapse" id="collapseExample">
+                <div class="">
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <input type="tel" class="form-control rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-6">
+            <div class="collapse" id="collapseExample">
+                <div class="">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12 ">
+            <a  data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                Endereço
+            </a>
+
+        </div>
+        <div class="col-lg-3">
+            <div class="collapse" id="collapseExample2">
+                <div class="">
+                    <div class="">
+                        <div class="form-group">
+                            <label>CEP</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="collapse" id="collapseExample2">
+                <div class="">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Endereço</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2">
+            <div class="collapse" id="collapseExample2">
+                <div class="">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Número</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="collapse" id="collapseExample2">
+                <div class="">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Complemento</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="collapse" id="collapseExample2">
+                <div class="">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Bairro</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="collapse" id="collapseExample2">
+                <div class="">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Cidade</label>
+                            <input type="text" class="form-control rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2">
+            <div class="collapse" id="collapseExample2">
+                <div class="">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Estado</label>
+                            <select class="form-control rounded">
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG" selected>MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                                <option value="EX">EX</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+    <button type="button" class="btn btn-primary">Salvar</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="sidebar-overlay" data-reff=""></div>
+<script src="../assets/js/jquery-3.2.1.min.js"></script>
+<script src="../assets/js/popper.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.js"></script>
+<script src="../assets/js/select2.min.js"></script>
+<script src="../assets/js/jquery.dataTables.min.js"></script> >
+<script src="../assets/js/dataTables.bootstrap4.min.js"></script> 
+<script src="../assets/js/moment.min.js"></script>
+<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/js/app.js"></script>
+
+<script>
+    $(document).ready(function() {
+       $("#tm").dataTable({
+        "bJQueryUI": true,
+        "oLanguage": {
+            "sProcessing":   "Processando...",
+            "sLengthMenu":   "Mostrar _MENU_ registros",
+            "sZeroRecords":  "Não foram encontrados resultados",
+            "sInfo":         "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+            "sInfoEmpty":    "Mostrando de 0 até 0 de 0 registros",
+            "sInfoFiltered": "",
+            "sInfoPostFix":  "",
+            "sSearch":       "Buscar:",
+            "sUrl":          "",
+            "oPaginate": {
+                "sFirst":    "Primeiro",
+                "sPrevious": "Anterior",
+                "sNext":     "Seguinte",
+                "sLast":     "Último"
+            }
+        }
+    }) 
+   } );
+
+
+
+</script>
+
+<script >
+    function Refresh(){
+      window.location.reload();
+
+
+  }
+
+  function Refresh2(){
+
+      document.getElementById('tab1').classList.remove('active');
+      document.getElementById('tab2').classList.add('active'); 
+
+  }
+</script>
+
+<script>
+    $(document).ready(function() {
+       $("#tf").dataTable({
+        "bJQueryUI": true,
+        "oLanguage": {
+            "sProcessing":   "Processando...",
+            "sLengthMenu":   "Mostrar _MENU_ registros",
+            "sZeroRecords":  "Não foram encontrados resultados",
+            "sInfo":         "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+            "sInfoEmpty":    "Mostrando de 0 até 0 de 0 registros",
+            "sInfoFiltered": "",
+            "sInfoPostFix":  "",
+            "sSearch":       "Buscar:",
+            "sUrl":          "",
+            "oPaginate": {
+                "sFirst":    "Primeiro",
+                "sPrevious": "Anterior",
+                "sNext":     "Seguinte",
+                "sLast":     "Último"
+            }
+        }
+    }) 
+   } );
+
+
+
+</script>
+</body>
+
+
+<!-- blank-page24:04-->
+</html>

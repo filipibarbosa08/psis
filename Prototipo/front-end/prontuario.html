@@ -1,0 +1,3075 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<!-- edit-patient24:07-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/ps.png">
+    <title>SisOdonto</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/light-gallery/css/lightgallery.min.css">
+
+
+    <script src='../assets/js/chosen.jquery.js'></script>
+
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+    <div class="modal fade" tabindex="-1" id="modalOrcamento" aria-hidden="true" >
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Orçamento</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body modal-orcamento" >
+
+
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label>Descrição <span class="text-danger">*</span></label>
+                    <input class="form-control rounded" type="text" id="nomePaciente" placeholder="Plano tratamento Filipi Alves">
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>Data</label>
+                    <div class="cal-icon">
+                        <input type="text" class="form-control datetimepicker rounded" >
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <h5 class=""> Lista de tratamentos </h5>
+        <div class="card-personalizado " >
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Plano <span class="text-danger">*</span></label>
+
+                        <select class="form-control  rounded">
+                            <option>Particular</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Procedimento <span class="text-danger">*</span></label>
+
+                        <select class="form-control  rounded">
+                            <option>Clareamento</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Dentes/Região </label>
+
+                        <select class="form-control  rounded">
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Valor <span class="text-danger">*</span></label>
+                        <input class="form-control rounded" type="text" id="nomePaciente" placeholder="R$ 80,00">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Dentista <span class="text-danger">*</span> </label>
+                        <input class="form-control rounded" type="text">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="text-center"> 
+            <a href="#" class="btn btn-primary btn-rounded"> Adicionar novo tratamento </a> 
+        </div>
+
+
+
+        <div class="card-personalizado " style="margin-top: 40px"> 
+
+            <div class="row invoice-payment">
+
+                <div class="col-sm-7">
+                    <label class="h5" >Desconto</label>
+                    
+                    
+                    <div class="form-group" style="margin-top: -10px;">
+                        <p>Valor <span class="text-danger"> *</span> </p>
+                        <input style="margin-top: -15px" class="form-control rounded w-25" type="text" placeholder="R$ 0,00">
+                        <select class="form-control  rounded select-desconto ">
+                            <option>R$</option>
+                            <option>%</option>
+                        </select>
+                        <div class="checkbox h5" style="margin-top: 10px">
+                            <label>
+                                <input type="checkbox" name="checkbox"> Parcelar Orçamento
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="col-sm-5">
+                    <div class="m-b-20">
+                        <div class="table-responsive no-border">
+                            <table class="table table-borderless table-light mb-0">
+                                <tbody>
+                                    <tr>
+                                        <th>Subtotal:</th>
+                                        <td class="text-right">R$0,00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Desconto:</th>
+                                        <td class="text-right">R$0,00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total:</th>
+                                        <td class="text-right text-primary">
+                                            <h5>R$0,00</h5>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar</button>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<div class="main-wrapper">
+    <div class="header">
+       <div class="header-left">
+        <a href="index.html" class="logo">
+           <img src="../assets/img/ps.png" width="35" height="35" alt=""> <span>Psis</span>
+       </a>
+   </div>
+   <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+   <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+   <ul class="nav user-menu float-right">
+    <li class="nav-item dropdown d-none d-sm-block">
+        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fas fa-bell"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+        <div class="dropdown-menu notifications">
+            <div class="topnav-dropdown-header">
+                <span>Notifications</span>
+            </div>
+            <div class="drop-scroll">
+                <ul class="notification-list">
+                    <li class="notification-message">
+                        <a href="activities.html">
+                            <div class="media">
+                               <span class="avatar">
+                                <img alt="John Doe" src="../assets/img/user.jpg" class="img-fluid rounded-circle">
+                            </span>
+                            <div class="media-body">
+                                <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+                                <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="notification-message">
+                    <a href="activities.html">
+                        <div class="media">
+                           <span class="avatar">V</span>
+                           <div class="media-body">
+                            <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+                            <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="notification-message">
+                <a href="activities.html">
+                    <div class="media">
+                       <span class="avatar">L</span>
+                       <div class="media-body">
+                        <p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+                        <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="notification-message">
+            <a href="activities.html">
+                <div class="media">
+                   <span class="avatar">G</span>
+                   <div class="media-body">
+                    <p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+                    <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li class="notification-message">
+        <a href="activities.html">
+            <div class="media">
+               <span class="avatar">V</span>
+               <div class="media-body">
+                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+                <p class="noti-time"><span class="notification-time">2 days ago</span></p>
+            </div>
+        </div>
+    </a>
+</li>
+</ul>
+</div>
+<div class="topnav-dropdown-footer">
+    <a href="activities.html">View all Notifications</a>
+</div>
+</div>
+</li>
+<li class="nav-item dropdown d-none d-sm-block">
+    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fas fa-comment"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+</li>
+<li class="nav-item dropdown has-arrow">
+    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+        <span class="user-img"><img class="rounded-circle" src="../assets/img/user.jpg" width="40" alt="Admin">
+           <span class="status online"></span></span>
+           <span>Dr. Filipi</span>
+       </a>
+       <div class="dropdown-menu">
+          <a class="dropdown-item" href="profile.html">My Profile</a>
+          <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+          <a class="dropdown-item" href="settings.html">Settings</a>
+          <a class="dropdown-item" href="login.html">Logout</a>
+      </div>
+  </li>
+</ul>
+<div class="dropdown mobile-user-menu float-right">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+    <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="profile.html">My Profile</a>
+        <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+        <a class="dropdown-item" href="settings.html">Settings</a>
+        <a class="dropdown-item" href="login.html">Logout</a>
+    </div>
+</div>
+</div>
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title">Main</li>
+                <li>
+                    <a href="index.html"><i class="fas fa-tachometer-alt"></i> <span>Painel de controle</span></a>
+                </li>
+                <li>
+                    <a href="agenda.html"><i class="fa fa-calendar"></i> <span>Agenda</span></a>
+                </li>
+                <li class="active">
+                    <a href="pacientes.html.html"><i class="fa fa-user" aria-hidden="true"></i> <span>Pacientes</span></a>
+                </li>
+                <li>
+                    <a href="financeiro.html"><i class="fa fa-money" aria-hidden="true"></i> <span>Financeiro</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                     <span>Relatórios</span></a>
+                 </li>
+                 <li>
+                    <a href="#"><i class="fa fa-cog" aria-hidden="true"></i>
+                       <span>Configurações</span></a>
+                   </li>
+
+                   <li>
+                    <a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>
+
+                        <span>Ajuda</span></a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="page-wrapper ">
+
+    <div class="content">
+        <h4 class="card-title"> Prontuário do paciente</h4>
+
+        
+
+        <ul class="nav nav-tabs nav-tabs-bottom bg-white rounded">
+            <li class="nav-item"><a class="nav-link active" href="#basictab1" data-toggle="tab">Geral</a></li>
+            <li class="nav-item"><a class="nav-link" href="#basictab2" data-toggle="tab">Dados cadastrais</a></li>
+            <li class="nav-item"><a class="nav-link" href="#basictab3" data-toggle="tab">Anamnese</a></li>
+            
+            <li class="nav-item"><a class="nav-link" href="#basictab5" data-toggle="tab">Tratamentos</a></li>
+            
+            <li class="nav-item"><a class="nav-link" href="#basictab7" data-toggle="tab">Débito</a></li>
+            <li class="nav-item"><a class="nav-link" href="#basictab8" data-toggle="tab">Atestado</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="#basictab11" data-toggle="tab">Documentos</a></li>
+
+
+
+
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane show active" id="basictab1">
+                <div class="card-box profile-header  ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="profile-view">
+                                <div class="profile-img-wrap">
+                                    <div class="profile-img">
+                                        <a href="#"><img class="avatar" src="../assets/img/user-03.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="profile-basic">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="profile-info-left">
+                                                <h3 class="user-name m-t-0 mb-0">Filipi Alves</h3>
+                                                <small class="text-muted">Entrar em contato: </small>
+
+                                                <div class="">
+                                                    <a href="https://api.whatsapp.com/send?phone=+55 38 98529263-9473&text=sua%20mensagem
+
+                                                    " target="_blank" class="btn btn-success"> <i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                                    <a href="https://web.whatsapp.com/" target="_blank" class="btn btn-primary"> <i class="fas fa-sms"></i> SMS </a>
+                                                </div>
+                                                <div class="staff-msg msg_paciente">
+                                                    <span class="d-inline-block " tabindex="0" data-toggle="tooltip" title="" data-original-title="Diabetes, Hipertensão">
+
+                                                        <button class="btn btn-warning text-dark" href="anamnese" style="pointer-events: none;" type="button"><span class="badge badge-pill bg-danger float-left text-white">2 </span>  Alertas de saúde</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <ul class="personal-info">
+                                                <li>
+                                                    <span class="title">Telefone:</span>
+                                                    <span class="text">(038) 999928529</span>
+                                                </li>
+
+                                                <li>
+                                                    <span class="title">Idade:</span>
+                                                    <span class="text">22 anos</span>
+                                                </li>
+
+                                                <li>
+                                                    <span class="title">Aniversário:</span>
+                                                    <span class="text">17 de outubro</span>
+                                                </li>
+
+                                                <li>
+                                                    <span class="title">Sexo:</span>
+                                                    <span class="text">Masculino</span>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Pagamento(s):</span>
+                                                    <span class="text text-danger">Em atraso</span>
+                                                </li>
+                                                <li>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+            <div class="tab-pane" id="basictab2">
+
+                <div class="row">
+
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row card-box shadow rounded">
+
+                                <div class="col-sm-12">
+                                    <h3 class="page-title">Dados do paciente </h3>
+
+
+                                </div>
+
+                                <div class="col-lg-12 m-b-20">
+                                    <a  class="h5 text-primary" data-toggle="collapse"  href="#collapseExample"  role="button" aria-expanded="false" aria-controls="collapseExample">
+                                      <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                      Dados pessoais
+                                  </a>
+
+                              </div>
+
+
+                              <div class="col-sm-7">
+                                <div class="form-group">
+                                    <label>Nome completo <span class="text-danger">*</span></label>
+                                    <input class="form-control rounded" type="text" value="Filipi Alves Barbosa">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-5">
+                             <div class="form-group">
+                              <label>Foto</label>
+                              <div class="profile-upload">
+                               <div class="upload-img">
+                                <img alt="" src="../assets/img/user.jpg">
+                            </div>
+                            <div class="upload-input">
+                                <input type="file" class="form-control rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Data de nascimento</label>
+                        <div class="cal-icon">
+                            <input type="text" class="form-control datetimepicker rounded" value="17/10/1997">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 ">
+                    <div class="form-group gender-selected ">
+                        <label class="gen-label ">Sexo:</label>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" name="genero" class="form-check-input " checked>Masculino
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label ">
+                                <input type="radio" name="genero" class="form-check-input">Feminino
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input class="form-control rounded" type="text" value="12345678900">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>RG</label>
+                        <input class="form-control rounded" type="text" value="MG12345678">
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>Observações</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12 m-b-20">
+                    <a  class="h5 text-primary" data-toggle="collapse"  href="#collapseExample"  role="button" aria-expanded="false" aria-controls="collapseExample">
+                      <i class="fa fa-caret-down" aria-hidden="true"></i>
+                      Contato
+                  </a>
+
+              </div>
+
+              <div class="col-sm-6">
+
+                <div class="form-group">
+                    <label>Celular<span class="text-danger">*</span></label>
+                    <input class="form-control rounded" type="text" value="(038)999928529">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input class="form-control rounded" type="text" >
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label>Email </label>
+                    <input class="form-control rounded" type="email" value="filipiab17@gmail.com">
+                </div>
+            </div>
+
+
+            <div class="col-lg-12 m-b-20">
+                <a  class="h5 text-primary" data-toggle="collapse"  href="#collapseExample"  role="button" aria-expanded="false" aria-controls="collapseExample">
+                  <i class="fa fa-caret-down" aria-hidden="true"></i>
+                  Endereço
+              </a>
+
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+                <label>CEP </label>
+                <input class="form-control rounded" type="email" value="39560-000">
+            </div>
+        </div>
+
+        <div class="col-sm-5 ">
+           <div class="form-group">
+            <label>Cidade</label>
+            <input type="text" class="form-control rounded" value="Itinga">
+        </div>
+    </div>
+    <div class="col-sm-4 ">
+        <div class="form-group ">
+            <label>Estado</label>
+            <select class="form-control select rounded">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG" selected>Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+                <option value="EX">Estrangeiro</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-10">
+        <div class="form-group">
+            <label>Endereço</label>
+            <input type="text" class="form-control rounded" value="Rua Prefeito Cristiano Lages">
+        </div>
+    </div>
+
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label>Número</label>
+            <input type="text" class="form-control rounded" value="210">
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label>Complemento</label>
+            <input type="text" class="form-control rounded" value="casa">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label>Bairro</label>
+            <input type="text" class="form-control rounded" value="Centro">
+        </div>
+    </div>
+
+
+
+
+    <div class="col-lg-12 m-b-20">
+        <a  class="h5 text-primary" data-toggle="collapse"  href="#collapseExample"  role="button" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+          Responsável legal
+      </a>
+
+  </div>
+
+  <div class="col-sm-12">
+    <div class="form-group">
+        <label>Nome Completo</label>
+        <input class="form-control rounded" type="text" >
+    </div>
+</div>
+
+<div class="col-sm-6">
+    <div class="form-group">
+        <label>Data de nascimento</label>
+        <div class="cal-icon">
+            <input type="text" class="form-control datetimepicker rounded">
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-6">
+    <div class="form-group">
+        <label>CPF</label>
+        <input class="form-control rounded" type="text" >
+    </div>
+</div>
+
+<div class="col-lg-12 m-b-20">
+    <a  class="h5 text-primary" data-toggle="collapse"  href="#collapseExample"  role="button" aria-expanded="false" aria-controls="collapseExample">
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+      Convênio
+  </a>
+
+</div>
+
+<div class="col-sm-4">
+    <div class="form-group">
+        <label>Convênio</label>
+        <select class="form-control select">
+            <option>Particular</option>
+
+        </select>
+    </div>
+</div>
+
+<div class="col-sm-4">
+    <div class="form-group">
+        <label>Plano</label>
+        <select class="form-control select">
+            <option>Padrão</option>
+
+        </select>
+    </div>
+</div>
+
+<div class="col-sm-4">
+
+    <div class="form-group">
+        <label>Empresa responsável </label>
+        <input class="form-control rounded" type="text">
+    </div>
+</div>
+
+
+<div class="col-sm-3">
+
+    <div class="form-group">
+        <label>Titular</label>
+        <input class="form-control rounded" type="text">
+    </div>
+</div>
+
+<div class="col-sm-3">
+
+    <div class="form-group">
+        <label>CPF do responsável </label>
+        <input class="form-control rounded" type="text">
+    </div>
+</div>
+
+
+<div class="col-sm-3">
+
+    <div class="form-group">
+        <label>Nº Carteirinha</label>
+        <input class="form-control rounded" type="text">
+    </div>
+</div>
+
+
+<div class="col-sm-3">
+    <div class="form-group">
+        <label>Data de validade</label>
+        <div class="cal-icon">
+            <input type="text" class="form-control datetimepicker rounded">
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="m-t-20 text-center">
+    <button class="btn btn-primary submit-btn">Salvar dados</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="basictab3">
+
+    <div class="">
+
+        <div class="row"> 
+
+            <div class="col-lg-8 offset-lg-2">
+
+                <form>
+
+                    <div class="row card-box shadow rounded" >
+
+                        <div class="col-sm-6">
+                            <h3 class="page-title">Anamnese </h3>
+                        </div>
+
+                        <div class="col-lg-12 m-b-20">
+                            <a  class="h5 text-primary collapsed" data-toggle="collapse"  href="#collapsehs"  role="button" aria-expanded="false" aria-controls="collapsehs">
+                              <i class="fa fa-caret-down" ></i>
+                              Histórico familiar
+                          </a>
+
+                      </div>
+
+
+                      <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Situação econômica da família:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Costumes, festas, refeições, finais de semana:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Características da Educação familiar:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Ambiente, interação:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Pai:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Mãe:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Irmãos:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Acontecimentos significativos na família:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group collapse"  class="collapse" id="collapsehs">
+                            <label class="">Casos de morte na família:</label>
+                            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-12 m-b-20">
+                        <a  class="h5 text-primary collapsed" data-toggle="collapse"  href="#collapseinf"  role="button" aria-expanded="false" aria-controls="collapseinf">
+                          <i class="fa fa-caret-down" ></i>
+                          Infância
+                      </a>
+
+                  </div>
+
+
+                  <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Primeiras recordações:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Saúde:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Relacionamento com os pais:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Relacionamento com os irmãos:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Relacionamento com outras crianças:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Amizade:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Controle da urina e fezes:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Tipos de brincadeira que participava:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Brinquedos que mais gostava:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Papel que assumia nas brincadeiras:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Fantasias:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group collapse"  class="collapse" id="collapseinf">
+                        <label class="">Acontecimentos marcantes:</label>
+                        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12 m-b-20">
+                    <a  class="h5 text-primary collapsed" data-toggle="collapse"  href="#collapseiad"  role="button" aria-expanded="false" aria-controls="collapseiad">
+                      <i class="fa fa-caret-down" ></i>
+                      Adolescência
+                  </a>
+
+              </div>
+
+
+              <div class="col-sm-12">
+                <div class="form-group collapse"  class="collapse" id="collapseiad">
+                    <label class="">Sentimentos, comportamentos e fantasias:</label>
+                    <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group collapse"  class="collapse" id="collapseiad">
+                    <label class="">Como percebeu e vivenciou as mudanças corporais:</label>
+                    <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group collapse"  class="collapse" id="collapseiad">
+                    <label class="">Relacionamentos e amizades:</label>
+                    <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group collapse"  class="collapse" id="collapseiad">
+                    <label class="">Jogos e preferências:</label>
+                    <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group collapse"  class="collapse" id="collapseiad">
+                    <label class="">Estudos:</label>
+                    <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group collapse"  class="collapse" id="collapseiad">
+                    <label class="">Trabalhos:</label>
+                    <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group collapse"  class="collapse" id="collapseiad">
+                    <label class="">Experiências marcantes:</label>
+                    <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-lg-12 m-b-20">
+                <a  class="h5 text-primary collapsed" data-toggle="collapse"  href="#collapsee"  role="button" aria-expanded="false" aria-controls="collapsee">
+                  <i class="fa fa-caret-down" ></i>
+                  Escola
+              </a>
+
+          </div>
+
+
+          <div class="col-sm-12">
+            <div class="form-group collapse"  class="collapse" id="collapsee">
+                <label class="">Primeiro dia (idade): acontecimentos significativos</label>
+                <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+         <div class="form-group collapse"  class="collapse" id="collapsee">
+            <label class="text-primary">Ensino Fundamental:</label>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="form-group collapse"  class="collapse" id="collapsee">
+            <label class="">Experiências e relacionamentos com colegas:</label>
+            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="form-group collapse"  class="collapse" id="collapsee">
+            <label class="">Experiência e relacionamento com professores:</label>
+            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="form-group collapse"  class="collapse" id="collapsee">
+            <label class="">Comportamento na escola:</label>
+            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="form-group collapse"  class="collapse" id="collapsee">
+            <label class="">Aproveito/Processo de aprendizagem:</label>
+            <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-sm-12">
+     <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="text-primary">Ensino Médio:</label>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="">Experiências e relacionamentos com colegas:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="">Experiência e relacionamento com professores:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="">Comportamento na escola:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="">Aproveito/Processo de aprendizagem:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="col-sm-12">
+ <div class="form-group collapse"  class="collapse" id="collapsee">
+    <label class="text-primary">Ensino Superior/Outross:</label>
+</div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="">Experiências e relacionamentos com colegas:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="">Experiência e relacionamento com professores:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="">Comportamento na escola:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapsee">
+        <label class="">Aproveito/Processo de aprendizagem:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+<div class="col-lg-12 m-b-20">
+    <a  class="h5 text-primary collapsed" data-toggle="collapse"  href="#collapss"  role="button" aria-expanded="false" aria-controls="collapss">
+      <i class="fa fa-caret-down" ></i>
+      Saúde
+  </a>
+
+</div>
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapss">
+        <label class="">Sono:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapss">
+        <label class="">Sonhos repetidos e pesadelos:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapss">
+        <label class="">Experiência e relacionamento com professores:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapss">
+        <label class="">Apetite, preferências alimentares, hábitos:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapss">
+        <label class="">Doenças(que já teve e que têm):</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapss">
+        <label class="">Uso de medicamentos (quando, quais):</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+<div class="col-lg-12 m-b-20">
+    <a  class="h5 text-primary collapsed" data-toggle="collapse"  href="#collapset"  role="button" aria-expanded="false" aria-controls="collapset">
+      <i class="fa fa-caret-down" ></i>
+      Trabalho
+  </a>
+
+</div>
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapset">
+        <label class="">Idade do início:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapset">
+        <label class="">Tipo do trabalho:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapset">
+        <label class="">Uso do dinheiro:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapset">
+        <label class="">Tipo que mais gosta e que menos gosta:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapset">
+        <label class="">Se fosse pedido pra fazer algo que não gosta como reagiria ?:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+
+<div class="col-lg-12 m-b-20">
+    <a  class="h5 text-primary collapsed" data-toggle="collapse"  href="#collapseds"  role="button" aria-expanded="false" aria-controls="collapseds">
+      <i class="fa fa-caret-down" ></i>
+      Desenvolvimento afetivo-sexual
+  </a>
+
+</div>
+
+<div class="col-sm-12">
+ <div class="form-group collapse"   id="collapseds">
+    <label class="text-primary">Como foi o processo de mudanças corporais:</label>
+</div>
+</div>
+
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Comportamentos, medos e sentimentos sobre a dimensão afetivo-sexual:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Com quem partilhava?:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Curiosidades sexuais na infância/adolescência:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Reações sobre a primeira menstruação/polução noturna:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Masturbação (quando, freqüência, sentimentos, situação atual...):</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Brincadeiras de conotação sexual:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Experiência de assédio ou abuso sexual/sentimentos:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Atitudes com relação ao corpo:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Experiênia de assédio ou abuso sexual/sentimentos:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Atitudes com relação ao corpo:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Experiências de amizades:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Experiências de intimidade:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Namoro:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+
+<div class="col-sm-12">
+    <div class="form-group collapse"  class="collapse" id="collapseds">
+        <label class="">Alguma preocupação nessa área?/qual:</label>
+        <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+</div>
+
+
+
+
+
+
+</div>
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="tab-pane" id="basictab4"> 
+    <div class="card-box  shadow rounded">
+        <a href="#" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modalOrcamento"><i class="fa fa-plus"></i> Novo Orçamento</a>
+
+        <h4 class="card-title text-dark" style="margin-top: 30px">Lista de orçamentos</h4>
+
+        <div class="row ">
+            <div class="col-lg-12">
+
+
+                <div class="table-responsive">
+                    <table class="table mb-0 table table-border table-striped custom-table" style="margin-top: -10px">
+                        <thead class="text-secondary ">
+                            <tr>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                                <th class="text-right"> </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>19/09/2020</td>
+                                <td>Plano tratamento de Filipi Alves</td>
+                                <td>R$ 200,00</td>
+                                <td> <div class="dropdown action-label">
+                                    <a class="btn btn-warning w-100 dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                        <strong> Pendente </strong>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">Pendente</a>
+                                        <a class="dropdown-item" href="#">Aprovado</a>
+                                        <a class="dropdown-item" href="#">Recusado</a>
+                                    </div>
+                                </div> </td>
+                                <td class="text-right">
+                                    <div class="dropdown dropdown-action">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#visualizar_orcamento"><i class="fa fa-eye m-r-5"></i> Visualizar/Imprimir</a>
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                            </tr>
+
+                            <tr >
+                                <td>10/02/2019</td>
+                                <td>Plano Tratamento Clareamento</td>
+                                <td>R$ 80,00</td>
+                                <td> <div class="dropdown action-label">
+                                    <a class="btn btn-success w-100 dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                     <strong>  Aprovado </strong>
+                                 </a>
+                                 <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">Pendente</a>
+                                    <a class="dropdown-item" href="#">Aprovado</a>
+                                    <a class="dropdown-item" href="#">Recusado</a>
+                                </div>
+                            </div> </td>
+                            <td class="text-right">
+                                <div class="dropdown dropdown-action">
+                                    <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#visualizar_orcamento"><i class="fa fa-eye m-r-5"></i> Visualizar/Imprimir</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr >
+                            <td>08/01/2018</td>
+                            <td>Plano tratamento aparelho </td>
+                            <td>R$ 300,00</td>
+                            <td> <div class="dropdown action-label">
+                                <a class="btn btn-success w-100 dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                 <strong>  Aprovado </strong>
+                             </a>
+                             <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Pendente</a>
+                                <a class="dropdown-item" href="#">Aprovado</a>
+                                <a class="dropdown-item" href="#">Recusado</a>
+                            </div>
+                        </div> </td>
+                        <td class="text-right">
+                            <div class="dropdown dropdown-action">
+                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#visualizar_orcamento"><i class="fa fa-eye m-r-5"></i> Visualizar/Imprimir</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr >
+                        <td>08/01/2018</td>
+                        <td>Plano tratamento aparelho </td>
+                        <td>R$ 300,00</td>
+                        <td> <div class="dropdown action-label">
+                            <a class="btn btn-danger w-100 dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                             <strong>  Recusado </strong>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Pendente</a>
+                            <a class="dropdown-item" href="#">Aprovado</a>
+                            <a class="dropdown-item" href="#">Recusado</a>
+                        </div>
+                    </div> </td>
+                    <td class="text-right">
+                        <div class="dropdown dropdown-action">
+                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#visualizar_orcamento"><i class="fa fa-eye m-r-5"></i> Visualizar/Imprimir</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editar_orcamento"><i class="fa fa-pencil-square m-r-5"></i> Editar</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletar_orcamento"><i class="fa fa-trash m-r-5"></i> Deletar</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div id="nt" class="modal fade delete-modal" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Novo tratamento</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body ">
+            <div class="row">
+
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label>Paciente <span class="text-danger">*</span></label>
+                        <input class="  form-control rounded" type="text" placeholder="Filipi Alves Barbosa" disabled="" >
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                 <div class="form-group">
+                    <label>Data da consulta</label>
+                    <div class="cal-icon">
+                        <input type="text" class="form-control  datetimepicker rounded" >
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-8">
+                <div class="form-group">
+                    <label>Serviço <span class="text-danger">*</span></label>
+                    <input class="  form-control rounded" type="text"   >
+                </div>
+            </div>
+
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Valor: <span class="text-danger">*</span></label>
+                    <input class="  form-control rounded" type="text"   >
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div class="tab-pane" id="basictab5"> 
+
+
+  <div class="m-b-20 ">
+    <button class="btn btn-primary " data-toggle="modal" data-target="#nt">Novo tratamento</button>
+</div>
+
+
+<div class="card shadow rounded">
+    <div class="row">
+        <div class="col-lg-12" >
+
+
+            <div class="card-box ">
+                <div class="card-block ">
+
+
+
+                    <div class="row">
+
+
+
+                        <div class="col-lg-6 ">
+                            <h4 class="card-title ">Tratamentos</h4>
+                        </div>
+
+                        <div class="col-lg-6 row justify-content-end">
+                            <div class="custom-control custom-switch" style="margin-left: 15px; margin-bottom: 10px;">
+                              <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="">
+                              <label class="custom-control-label" for="customSwitch1">Exibir tratamentos finalizados</label>
+                          </div>
+                      </div>
+
+
+
+
+                  </div>
+
+
+
+
+
+
+
+                  <div class="table-responsive " >
+
+                    <table class="table   table-border table-striped custom-table mb-0">
+
+                        <thead class="text-secondary ">
+                            <tr >
+
+                                <th>Início</th>
+                                <th>Serviço</th>
+                                <th>Evolução do tratamento</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr> 
+
+                                <td> 15/09/2020 </td>
+                                <td>  Orientação profissional </</td>
+                                <td> <a class=" btn btn-primary btn-primary-two"  data-toggle="modal" data-target="#evolucaoTratamento">Ver/Editar</a> </td>
+                                <td> <button type="button" class="btn btn-primary w-75"> <strong> Em andamento </strong> </button>  </td>
+                            </tr>
+
+                            <tr >
+
+                                <td>15/09/2020</td>
+                                <td>Terapia comportamental</td>
+                                <td> <a class="btn btn-primary btn-primary-two" href="">Ver/Editar</a> </td>
+                                <td> <button type="button" class="btn btn-danger w-75"> <strong> Interrompido </strong> </button> </td>
+                            </tr>
+
+
+
+                        </tbody>
+
+
+
+                    </table>
+
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+<div class="tab-pane" id="basictab6"> Tela odontograma em desenvolvimento.. </div>
+
+
+
+<div class="tab-pane" id="basictab7" > 
+
+
+
+
+
+    <div class="card-box shadow rounded" >
+        <div class="row justify-content-md-center">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label > <b> TOTAL RECEBIDO </b> </label>
+
+                    <a class="form-control rounded  btn btn-outline-success  ">
+                        <strong> R$ 0,00 </strong> </a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label > <b> TOTAL A RECEBER </b> </label>
+
+                        <a class="form-control rounded  btn btn-outline-danger  ">
+                            <strong> R$ 330,00 </strong> </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                
+
+
+
+                <div class="col-lg-12" >
+                    <div class="card-box">
+                        <div class="card-block tabela-debitos">
+
+                            <div class="row">
+
+
+                                <div class="col-lg-6 ">
+                                    <h4 class="card-title ">Tratamentos</h4>
+                                </div>
+
+                                <div class="col-lg-6 row justify-content-end">
+                                    <div class="custom-control custom-switch" style="margin-left: 15px; margin-bottom: 10px;">
+                                      <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="">
+                                      <label class="custom-control-label" for="customSwitch1">Exibir tratamentos pagos</label>
+                                  </div>
+                              </div>
+
+
+
+
+                          </div>
+
+
+
+
+
+
+
+                          <div class="table-responsive " >
+                            <table class="table   table-border table-striped custom-table mb-0">
+
+                                <thead class="text-secondary ">
+                                    <tr>
+                                        <th></th>
+                                        <th>Data da sessão</th>
+                                        
+                                        <th>Valor</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <tr > 
+                                        <td style="width:1% "> <input type="checkbox" name="" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> </td>
+                                        <td> 15/09/2020 </td>
+                                       
+                                        <td>  R$ 200,00 </td>
+                                        <td> <button type="button" class="btn btn-warning w-75"> <strong> Pendente </strong> </button>  </td>
+                                    </tr>
+
+                                    <tr >
+                                        <td style="width:1% "> <input type="checkbox" name=""> </td>
+                                        <td>15/09/2020</td>
+                                     
+                                        <td>R$ 300,00</td>
+                                        <td> <button type="button" class="btn btn-danger w-75"> <strong> Atrasado </strong> </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:1% "> <input type="checkbox" name=""> </td>
+                                        <td>02/02/2020</td>
+                                       
+                                        <td>R$ 350,00</td>
+                                        <td> <button type="button" class="btn btn-success w-75"> <strong> Pago </strong> </button> </td>
+                                    </tr>
+
+
+                                </tbody>
+
+
+
+                            </table>
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+        <div class="collapse collapsepagamento card  cardpagamento shadow-lg"  id="collapseExample" style="width: 78.5%;">
+
+          <div  class="row justify-content-md-center"  style="height: 200px;"> 
+
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <div class="contasselecionadas text-muted" style="margin-top: 10px;">1 Conta Selecionada</div>
+                    <div class="row" style="margin-top: 10px; margin-left: -100px;"> 
+                        <div class="col-lg-8" "> 
+                            <h4 class="text-primary">R$ 200,00</h4>
+                            <div >Total selecionado</div>
+                        </div>
+                        <div class="col-lg-2" style="margin-left: -50px;" >
+                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#receberTratamento"  style="margin-left: -40px; ">RECEBER</button>
+
+                        </div>
+                        <div class="col-lg-2" >
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#parcelarTratamento">PARCELAR</button>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div class="tab-pane" id="basictab8">
+    <div class="card-box shadow rounded">
+       <div class="row">
+
+        <div class="col-lg-12">
+           <h4 class="card-title">Atestado</h4>
+
+       </div>
+
+       <div class="col-lg-12">
+           <div class="form-group w-25">
+            <label>Dentista <span class="text-danger">*</span></label>
+
+            <select class="form-control  rounded">
+                <option>Dr. Filipi</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+       <div class="form-group w-50 gender-selected ">
+        <label class="gen-label " style="margin-bottom: 2px;">Tipo de atestado:</label>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input  id="tipoAtestado1"  type="radio" name="genero" class="form-check-input " checked>Atestado de dias
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label ">
+                <input onclick="tempoAtestado()"   id="tipoAtestado2" type="radio" name="genero" class="form-check-input">Presença na consulta
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3">
+    <div class="form-group">
+        <label>Data do atestado <span class="text-danger">*</span></label>
+        <div class="cal-icon">
+            <input type="text" class="form-control datetimepicker rounded" value="14/10/2020">
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3" id="tempo_atestado">
+    <label>Quantidade de dias <span class="text-danger">*</span></label>
+    <input  class="form-control rounded"  value="" type="number"
+    min="1" max="1000" placeholder="1">
+</div>
+
+<div class="w-100"></div>
+
+
+<div class="col-lg-6 ">
+    <div class="form-group ">
+        <label>CID <span class="text-danger">*</span></label>
+        <select class="select rounded" multiple>
+
+        </select>
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-lg  btn-success font-weight-bold"><i class="fa fa-print" aria-hidden="true"></i>
+        EMITIR ATESTADO</button>
+    </div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="basictab9">
+    <div class="card-box  shadow rounded">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="card-title">Receituário</h4>
+
+            </div>
+            <div class="col-lg-8">
+                <label>Paciente</label>
+                <input class="form-control rounded" type="text" name="" placeholder="Filipi Alves Barbosa" disabled="">
+            </div>
+            <div class="col-lg-4">
+                <label>Data</label>
+                <div class="cal-icon">
+                    <input type="text" class="form-control datetimepicker rounded" value="14/10/2020">
+                </div>
+            </div>
+            <div class="w-100"></div>
+
+            <div class=" row  col-lg-12   m-t-10" style="margin-left: 0px; "> 
+                <div class="col-lg-4" style="margin-top: 20px;">
+
+                    <div class="form-group ">
+                        <label>Medicamento <span class="text-danger">*</span></label>
+                        <input class="form-control bg-white text-primary rounded border-0 " disabled="" type="text" name="" placeholder="Azitromicina 500mg">
+                    </div>
+
+                </div>
+                <div class="col-lg-2 " style="margin-top: 20px;">
+                    <label>Quantidade<span class="text-danger">*</span></label>
+                    <input  class="form-control rounded"  value="" type="number"
+                    min="1" max="1000" placeholder="1">
+
+
+                </div>
+                <div class="col-lg-6 " style="margin-top: 20px;">
+                    <div class="form-group ">
+                        <label>Medida<span class="text-danger">*</span></label>
+
+                        <select class="form-control  rounded">
+                            <option>Ampola(s)</option>
+                            <option>Caixa(s)</option>
+                            <option>Comprimido(s)</option>
+                            <option>Frasco(s)</option>
+                            <option>Tubo(s)</option>
+                            <option>Cápsula(s)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label >Posologia</label>
+                        <textarea class="form-control rounded" rows="1" placeholder="Tomar 1 comprimido via oral por dia por 3 dias"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 " >
+                <div class="form-group w-100" style="margin-top: 10px;">
+                    <label>Adicionar medicamento<span class="text-danger">*</span></label>
+
+                    <select class="select rounded" multiple="">
+                        <option >Azitromicina 500mg</option>
+                        <option>Caixa(s)</option>
+                        <option>Comprimido(s)</option>
+                        <option>Frasco(s)</option>
+                        <option>Tubo(s)</option>
+                        <option>Cápsula(s)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-lg  btn-success font-weight-bold"><i class="fa fa-print" aria-hidden="true"></i>
+                    EMITIR RECEITA</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane" id="basictab10">
+
+    <div class="row">
+        <div class="col-sm-4 col-3">
+            <h4 class="page-title">Imagens</h4>
+        </div>
+        <div class="col-sm-8 col-9 text-right m-b-20">
+            <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modalImagem">
+             <i class="fas fa-images"></i> Inserir imagem
+         </button>
+     </div>
+ </div>
+ <div id="lightgallery" class="row">
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente3.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente3.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente3.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente3.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente3.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente3.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente3.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente3.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente1.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente1.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente1.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente1.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente1.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente1.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente1.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente1.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente2.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente2.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente2.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente2.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente2.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente2.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20">
+        <a href="../assets/img/fotoPaciente2.jpg">
+            <img class="img-thumbnail" src="../assets/img/fotoPaciente2.jpg" alt="">
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="tab-pane" id="basictab11">
+
+    <div class="row">
+        <div class="col-sm-4 col-3">
+            <h4 class="page-title">Documentos</h4>
+        </div>
+        <div class="col-sm-8 col-9 text-right m-b-20">
+            <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modalDocumento">
+             <i class="fas fa-images"></i> Inserir documento
+         </button>
+     </div>
+ </div>
+
+ <div class="row">
+     <div class="col-sm-12">
+         <ul class="attachments clearfix text-center">
+            <li>
+                <div class="attach-file"><i class="fa fa-file-pdf-o"></i></div>
+                <div class="attach-info">
+                    <a href="#" class="attach-filename">daily_meeting.pdf</a>
+                    <div class="attach-fileize"> 842 KB</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="attach-file"><i class="fa fa-file-pdf-o"></i></div>
+                <div class="attach-info">
+                    <a href="#" class="attach-filename">daily_meeting.pdf</a>
+                    <div class="attach-fileize"> 842 KB</div>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="attach-file"><i class="fa fa-file-word-o"></i></div>
+                <div class="attach-info">
+                    <a href="#" class="attach-filename">documentation.docx</a>
+                    <div class="attach-fileize"> 2,305 KB</div>
+                </div>
+            </li>
+            <li>
+                <div class="attach-file"><i class="fa fa-file-word-o"></i></div>
+                <div class="attach-info">
+                    <a href="#" class="attach-filename">documentation.docx</a>
+                    <div class="attach-fileize"> 2,305 KB</div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div id="lightgallery" class="row">
+
+
+</div>
+</div>
+
+
+<div class="modal" id="modalDocumento" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Inserir Documento</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+
+                <label>Selecionar documento</label>
+
+                <input type="file" id="BSbtndanger">
+
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar imagem</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="modal" id="modalImagem" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Inserir imagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+
+                <label>Selecionar imagem</label>
+
+                <input type="file" id="BSbtndanger">
+
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar imagem</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+<div class="notification-box">
+    <div class="msg-sidebar notifications msg-noti">
+        <div class="topnav-dropdown-header">
+            <span>Messages</span>
+        </div>
+        <div class="drop-scroll msg-list-scroll" id="msg_list">
+            <ul class="list-box">
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">R</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Richard Miles </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item new-message">
+                            <div class="list-left">
+                                <span class="avatar">J</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">John Doe</span>
+                                <span class="message-time">1 Aug</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">T</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Tarah Shropshire </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">M</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Mike Litorus</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">C</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Catherine Manseau </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">D</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Domenic Houston </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">B</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Buster Wigton </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">R</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Rolland Webber </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">C</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author"> Claire Mapes </span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">M</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Melita Faucher</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">J</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Jeffery Lalor</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">L</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Loren Gatlin</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="chat.html">
+                        <div class="list-item">
+                            <div class="list-left">
+                                <span class="avatar">T</span>
+                            </div>
+                            <div class="list-body">
+                                <span class="message-author">Tarah Shropshire</span>
+                                <span class="message-time">12:28 AM</span>
+                                <div class="clearfix"></div>
+                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="topnav-dropdown-footer">
+            <a href="chat.html">See all messages</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="evolucaoTratamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Evolução do tratamento</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Motivação</label>
+                <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1" placeholder="Crises de ansiedade" disabled=""></textarea>
+                <small class="d-flex justify-content-end" >Tratamento iniciado em: 12 de Out de 2020</small>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>Observação</label>
+                <textarea class="form-control rounded" id="exampleFormControlTextarea1" rows="1"  ></textarea>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="col-sm-12 ">
+
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-sm-6"><h4 class="card-title text-dark" style="margin-top: 10px;">Evolução do tratamento</h4>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-end">
+                    <button onclick="adicionaLinha('tabelaEvolucao')" type="button" class="btn btn-danger rounded" style="margin-right: 10px;"><i class="fa fa-print" aria-hidden="true"></i>
+                    Imprimir evolução</button>
+                    <button onclick="adicionaLinha('tabelaEvolucao')" type="button" class="btn btn-success rounded"><i class="fa fa-plus"></i> Adicionar evolução</button>
+
+                </div>
+            </div>
+
+            
+
+            <div class="table-responsive " >
+                <table class="table   table-border table-striped custom-table mb-0" id="tabelaEvolucao">
+
+                    <thead class="text-secondary ">
+                        <tr>
+
+                            <th>Data da sessão</th>
+                            <th>Observação</th>
+
+                            <th >Excluir</th>
+
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr > 
+
+                            <td contenteditable='true'>12/10/2020 </td>
+
+                            <td contenteditable='true'>  Observações da sessão </</td>
+
+                            <td style="width:1%"> <button onclick='removeLinha(this)' data-toggle="modal" data-target="#deletar_evolucaoprocedimento"  type="button" class="close"  aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button> </td>
+
+                      </tr>
+
+
+
+
+                  </tbody>
+
+
+
+              </table>
+
+
+
+          </div>
+      </div>
+
+  </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+    <button type="button" class="btn btn-primary">Salvar</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="visualizar_orcamento" class="modal fade delete-modal" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body ">
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <h4 class="card-title">Visualizando procedimentos</h4>
+                        <div class="table-responsive">
+                            <table class="table mb-0 table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Descrição</th>
+                                        <th>Dente</th>
+                                        <th>Profissional</th>
+                                        <th>Valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td >Faceta em Resina Fotopolimerizável</td>
+                                        <td>
+                                        26</td>
+                                        <td>Filipi Alves Barbosa
+                                        </td>
+                                        <td>R$ 140,00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Placa de Clareamento</td>
+                                        <td>25</td>
+                                        <td>Filipi Alves Barbosa</td>
+                                        <td>R$ 200,00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aparelho Extra Bucal</td>
+                                        <td>Arcada Superior</td>
+                                        <td>Filipi Alves Barbosa</td>
+                                        <td>R$ 500,00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+
+
+                    <div class="col-sm-12 ">
+
+                        <div class="table-responsive no-border">
+                            <table class="table table-borderless table-light table-sm">
+                                <tbody>
+                                    <tr>
+                                        <th>Subtotal:</th>
+                                        <td class="text-right">R$500,00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Desconto:</th>
+                                        <td class="text-right">R$20,00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total:</th>
+                                        <td class="text-right text-primary">
+                                            <h5>R$480,00</h5>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-footer">
+
+
+
+
+
+                <button type="button" class="btn btn-primary"><i class="fa fa-print" aria-hidden="true"></i>
+                Imprimir</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+            </div>
+
+
+
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="parcelarTratamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Parcelar Tratamento</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div class="row ">
+
+
+
+
+        <div class="col-lg-12 ">
+            <ul class=" list-group  ">
+              <li class="list-group-item bg-light "><b>Data: </b> 15/09/2020  </li>
+              <li class="list-group-item bg-light "> <b>Valor total:</b> R$ 500,00 </li>
+              <li class="list-group-item bg-light "> <a href="">Ver tratamentos</a>  </li>
+
+          </ul>
+
+      </div>
+
+      <div class="col-lg-3" style="margin-top: 10px;" >
+        <div class="btn-group w-100" role="group" aria-label="Exemplo básico">
+            <div class="form-group w-100" >
+                <label class="">Parcelas</label>
+                <input type="number" class="form-control  rounded "  min="1" max="60" placeholder="1">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-lg-9" style="margin-top: 10px;">
+      <div class="form-group w-100">
+        <label for="exampleFormControlInput1">Valor das parcelas</label>
+        <input type="text" class="form-control  rounded "  placeholder="R$500,00" style="font-weight: bold;" disabled>
+    </div>
+</div>
+
+
+
+</div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+    <button type="button" class="btn btn-primary">Receber</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="receberTratamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Recebimento de Conta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="row ">
+
+
+
+
+        <div class="col-lg-12 ">
+            <ul class=" list-group  ">
+              <li class="list-group-item bg-light "><b>Data: </b> 15/09/2020  </li>
+              <li class="list-group-item bg-light "> <b>Valor total:</b> R$ 500,00 </li>
+              <li class="list-group-item bg-light "> <a href="">Ver tratamentos</a>  </li>
+
+          </ul>
+
+      </div>
+
+
+
+
+  </div>
+
+
+
+
+  <div class="row" style="margin-top: 20px;" >
+    <div class="col-lg-6">
+        <div class="btn-group w-100" role="group" aria-label="Exemplo básico">
+            <div class="form-group w-100" >
+                <label class="">Meio de pagamento</label>
+                <select class="form-control w-100 rounded " id="exampleFormControlSelect1" >
+                  <option>Dinheiro</option>
+                  <option>Crédito</option>
+                  <option>Débito</option>
+                  <option>Boleto</option>
+                  <option>Transferência</option>
+                  <option>Cheque</option>
+              </select>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="btn-group w-100" role="group" aria-label="Exemplo básico">
+        <div class="form-group w-100" >
+            <label >Caixa</label>
+            <select class="form-control w-100 rounded " id="exampleFormControlSelect1">
+              <option >Caixa</option>
+              <option>Conta do banco</option>
+
+          </select>
+      </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<div class="row ">
+
+  <div class="col-lg-6">
+    <label>Data do recebimento <span class="text-danger">*</span></label>
+    <div class="cal-icon w-100">
+        <input type="text" class="form-control datetimepicker rounded" value="10/10/2020" >
+    </div>
+</div>
+
+
+
+
+<div class="col-lg-6">
+  <div class="form-group w-100">
+    <label for="exampleFormControlInput1">Valor pago<span class="text-danger">*</span></label>
+    <input type="text" class="form-control  rounded "  placeholder="R$500,00" style="font-weight: bold;">
+</div>
+</div>
+
+
+
+</div>
+
+
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+    <button type="button" class="btn btn-primary">Receber</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="aprovar_orcamento" class="modal fade delete-modal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="assets/img/success.png" alt="" width="50" height="46">
+                <h3>Deseja realmente aprovar o orçamento ?</h3>
+                <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Fechar</a>
+                    <button type="submit" class="btn btn-success">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deletar_orcamento" class="modal fade delete-modal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="assets/img/sent.png" alt="" width="50" height="46">
+                <h3>Deseja realmente deletar o orçamento?</h3>
+                <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Fechar</a>
+                    <button type="submit" class="btn btn-danger">Deletar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="editar_orcamento" class="modal fade" tabindex="-1"  aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Editar orçamento</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body modal-orcamento" >
+
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="form-group">
+                <label>Descrição <span class="text-danger">*</span></label>
+                <input class="form-control rounded" type="text" id="nomePaciente" placeholder="Plano tratamento Filipi Alves">
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label>Data</label>
+                <div class="cal-icon">
+                    <input type="text" class="form-control datetimepicker rounded" placeholder="30/09/2020" >
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <h5 class=""> Lista de tratamentos </h5>
+    <div class="card-personalizado" >
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>Plano <span class="text-danger">*</span></label>
+
+                    <select class="form-control  rounded">
+                        <option>Particular</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label>Tratamento <span class="text-danger">*</span></label>
+
+                    <select class="form-control  rounded">
+                        <option>Clareamento</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>Dentes/Região </label>
+
+                    <select class="form-control  rounded" placeholder="26">
+                        <option>Arcada superior</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>Valor <span class="text-danger">*</span></label>
+                    <input class="form-control rounded" type="text" id="nomePaciente" placeholder="R$ 500,00">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Dentista <span class="text-danger">*</span> </label>
+                    <input class="form-control rounded" type="text" placeholder="Dr. Filipi">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="text-center"> 
+        <a href="#" class="btn btn-primary btn-rounded"> Adicionar novo tratamento </a> 
+    </div>
+
+
+
+    <div class="card-personalizado " style="margin-top: 40px"> 
+
+        <div class="row invoice-payment">
+
+            <div class="col-sm-7">
+                <label class="h5" >Desconto</label>
+
+
+                <div class="form-group" style="margin-top: -10px;">
+                    <p>Valor <span class="text-danger"> *</span> </p>
+                    <input style="margin-top: -15px" class="form-control rounded w-25" type="text" placeholder="R$ 20,00">
+                    <select class="form-control  rounded select-desconto ">
+                        <option>R$</option>
+                        <option>%</option>
+                    </select>
+                    <div class="checkbox h5" style="margin-top: 10px">
+                        <label>
+                            <input type="checkbox" name="checkbox"> Parcelar Orçamento
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-5">
+                <div class="m-b-20">
+                    <div class="table-responsive no-border">
+                        <table class="table table-borderless table-light mb-0">
+                            <tbody>
+                                <tr>
+                                    <th>Subtotal:</th>
+                                    <td class="text-right">R$500,00</td>
+                                </tr>
+                                <tr>
+                                    <th>Desconto:</th>
+                                    <td class="text-right">R$20,00</td>
+                                </tr>
+                                <tr>
+                                    <th>Total:</th>
+                                    <td class="text-right text-primary">
+                                        <h5>R$480,00</h5>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+    <button type="button" class="btn btn-primary">Salvar</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="sidebar-overlay" data-reff=""></div>
+<script src="../assets/js/jquery-3.2.1.min.js"></script>
+<script src="../assets/js/popper.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.slimscroll.js"></script>
+<script src="../assets/js/select2.min.js"></script>
+<script src="../assets/js/moment.min.js"></script>
+<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/plugins/light-gallery/js/lightgallery-all.min.js"></script>
+
+<script src="../assets/js/app.js"></script>
+
+<style type="text/css">
+
+</style>
+
+
+
+<script>
+
+            //Funcao adiciona uma nova linha na tabela
+            function adicionaLinha(idTabela) {
+
+                var tabela = document.getElementById(idTabela);
+                var numeroLinhas = tabela.rows.length;
+                var linha = tabela.insertRow(numeroLinhas);
+                var celula1 = linha.insertCell(0);
+                var celula2 = linha.insertCell(1);   
+                var celula3 = linha.insertCell(2); 
+                
+
+                celula2.innerHTML = "<td> Observações da sessão </td>";
+                celula2.setAttribute('contenteditable',true);
+
+
+
+
+                celula1.innerHTML =  "<td >12/10/2020 </td>";
+                celula1.setAttribute('contenteditable',true);
+
+                celula3.innerHTML = "<td style='width:1%'> <button onclick='removeLinha(this)' type='button' class='close' aria-label='Close'> <span aria-hidden='true'> &times;</span> </button> </td>";
+
+                
+            }
+            
+            function removeLinha(linha) {
+              var i=linha.parentNode.parentNode.rowIndex;
+              document.getElementById('tabelaEvolucao').deleteRow(i);
+
+
+          }        
+
+      </script>    
+
+
+  </body>
+
+
+  <!-- edit-patient24:07-->
+  </html>
